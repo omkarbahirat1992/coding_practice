@@ -4,6 +4,7 @@
 
 #define MAX 100
 
+#define INT_SIZE 32
 void test_switch(void)
 {
         int type_count = -7, cur_score = 0;
@@ -85,6 +86,26 @@ void test_if(void)
         else 
                 printf("all NOT One\n");
 }
+
+/*
+Find an unique element, when all other elements occur exactly twice
+*/
+void test_unique_array_elem()
+{
+    int arr[] = {5, 5, 4, 3, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    // Initialize result
+    int result = 0, i;
+ 
+    // Iterate through every bit
+    for (i = 0; i < n; i++)
+    {
+        result ^= arr[i];
+    }
+    printf("The element with single occurrence is %d \n", result);
+}
+ 
 int main(void)
 {
         char str[MAX];
@@ -105,6 +126,7 @@ int main(void)
        
         test_fork();
         test_if();
-*/        test_switch();
+        test_switch();
+*/        test_unique_array_elem();
          return 0;
 }
