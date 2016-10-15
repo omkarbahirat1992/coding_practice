@@ -106,6 +106,32 @@ void test_unique_array_elem()
     printf("The element with single occurrence is %d \n", result);
 }
  
+void test_if_continue()
+{
+    if (1) {
+        printf("before continue\n");
+  //      break;
+        printf("after continue\n");
+    }
+}
+
+void test_unbit_macro()
+{
+/* #define unbit1(ans, value) \
+        (value & 1) ? ans : \
+        #ifndef unbit  \
+        #define unbit(ans, value) \
+            (value & 1) ? ans : unbit1(ans+1, value >> 1)
+        #endif
+
+#ifndef unbit
+#define unbit(ans, value) \
+        (value & 1) ? ans : unbit(ans+1, value >> 1)
+#endif
+
+    printf("unbit(%d,%d) = %d\n", 0, 4, unbit(0, 4));
+*/
+}
 int main(void)
 {
         char str[MAX];
@@ -127,6 +153,8 @@ int main(void)
         test_fork();
         test_if();
         test_switch();
-*/        test_unique_array_elem();
+        test_unique_array_elem();
+      test_if_continue();
+*/      test_unbit_macro();
          return 0;
 }
