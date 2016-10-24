@@ -14,8 +14,18 @@ typedef struct node
 node * lca(node * root, int v1,int v2)
 {
     node *ans_root = NULL;
-    if (v1 == v2 && (root->left->data == v1 || root->right->data == v1)) {
+    if (root == NULL) {
         return root;
+    }
+    if (v1 == root->data || v2 == root->data) {
+        return root;
+    }
+    if (v1 == v2) {
+        if (v1 == root->data) {
+            return root;
+        } else if (v1 <= root->data || v1 > root->data) {
+            return root;
+        }
     }
     if (v1 <= root->data && v2 > root->data) {
         return root;
