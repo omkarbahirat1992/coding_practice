@@ -132,6 +132,14 @@ void test_unbit_macro()
     printf("unbit(%d,%d) = %d\n", 0, 4, unbit(0, 4));
 */
 }
+
+void check_typeof()
+{
+    int a;
+    void *ptr = &a;
+    printf("a = %u\n", sizeof(typeof(a)));
+    printf("ptr = %u\n", sizeof(typeof(*ptr)));
+}
 int main(void)
 {
         char str[MAX];
@@ -155,6 +163,8 @@ int main(void)
         test_switch();
         test_unique_array_elem();
       test_if_continue();
-*/      test_unbit_macro();
+      test_unbit_macro();
+*/
+    check_typeof();
          return 0;
 }
